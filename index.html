@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){function fmt(a){if(a instanceof Error)return a.message;if(typeof a==="object"&&a!==null){try{return JSON.stringify(a)}catch(e){return String(a)}}return String(a)}function send(t,m,l){try{parent.postMessage({__stc:1,type:t,msg:m,line:l},"*")}catch(e){}}["log","info","warn","error"].forEach(function(m){var o=console[m];console[m]=function(){send(m,Array.prototype.map.call(arguments,fmt).join(" "));if(o)o.apply(console,arguments)}});window.addEventListener("error",function(e){send("error",e.message,e.lineno)});window.addEventListener("unhandledrejection",function(e){send("error","Promise: "+fmt(e.reason))});})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Malika tort — кондитерский магазин в Шымкенте</title>
+  <meta name="description" content="Malika tort — кондитерский магазин в Шымкенте. Проспект Республики, 25д. Ежедневно с 09:00 до 22:00.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fffaf7;
+      color: #3d2924;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 250, 247, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #eadbd3;
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: bold;
+      color: #6e4035;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #9b5e4e;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      padding: 70px 24px;
+      background:
+        radial-gradient(circle at 85% 25%, #f3d9d0 0, transparent 28%),
+        radial-gradient(circle at 15% 80%, #ead5cc 0, transparent 25%),
+        #fffaf7;
+    }
+
+    .hero-content {
+      width: 1150px;
+      max-width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #f3e4df;
+      color: #805044;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(55px, 8vw, 100px);
+      line-height: 0.95;
+      font-weight: normal;
+      color: #4c3029;
+      margin-bottom: 25px;
+    }
+
+    .hero-text {
+      font-size: 18px;
+      color: #765e57;
+      max-width: 540px;
+      margin-bottom: 32px;
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: #654036;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid #d9c3bb;
+      color: #654036;
+    }
+
+    .btn-map {
+      background: #e7d1c8;
+      color: #54352d;
+    }
+
+    /* CAKE DECORATION */
+
+    .cake-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cake {
+      width: 330px;
+      height: 280px;
+      position: relative;
+    }
+
+    .cake-shadow {
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      width: 270px;
+      height: 35px;
+      background: #e5d2ca;
+      border-radius: 50%;
+    }
+
+    .cake-bottom {
+      position: absolute;
+      bottom: 45px;
+      left: 45px;
+      width: 240px;
+      height: 100px;
+      background: #b97862;
+      border-radius: 0 0 25px 25px;
+    }
+
+    .cake-middle {
+      position: absolute;
+      bottom: 125px;
+      left: 45px;
+      width: 240px;
+      height: 45px;
+      background: #f6e2da;
+      border-radius: 10px;
+    }
+
+    .cake-top {
+      position: absolute;
+      bottom: 155px;
+      left: 40px;
+      width: 250px;
+      height: 75px;
+      background: #e9b8a8;
+      border-radius: 50%;
+    }
+
+    .cream {
+      position: absolute;
+      bottom: 185px;
+      left: 55px;
+      width: 220px;
+      height: 45px;
+      background: #fff8f4;
+      border-radius: 50%;
+    }
+
+    .cherry {
+      position: absolute;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: #7d3d3b;
+    }
+
+    .cherry.one {
+      top: 35px;
+      left: 125px;
+    }
+
+    .cherry.two {
+      top: 55px;
+      left: 190px;
+    }
+
+    .cherry.three {
+      top: 42px;
+      left: 225px;
+    }
+
+    /* INFO */
+
+    .info {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 24px;
+    }
+
+    .section-label {
+      color: #9b6557;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 48px;
+      font-weight: normal;
+      margin-bottom: 45px;
+      color: #4c3029;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eadbd3;
+      border-radius: 25px;
+      padding: 30px;
+      min-height: 180px;
+    }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .card-title {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      color: #765e57;
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #f1e2dc;
+      padding: 90px 24px;
+    }
+
+    .about-inner {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about h2 {
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #765e57;
+      font-size: 17px;
+      max-width: 680px;
+      margin: auto;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: 90px 24px;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      border: 1px solid #eadbd3;
+      border-radius: 30px;
+      padding: 45px;
+    }
+
+    .phone {
+      display: block;
+      font-size: 18px;
+      margin: 8px 0;
+      color: #654036;
+    }
+
+    .phone:hover {
+      text-decoration: underline;
+    }
+
+    .contact-buttons {
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #4b3029;
+      color: #f7ebe7;
+      padding: 35px 24px;
+      text-align: center;
+    }
+
+    footer strong {
+      font-family: Georgia, serif;
+      font-size: 20px;
+    }
+
+    footer p {
+      margin-top: 8px;
+      font-size: 13px;
+      opacity: 0.75;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        padding: 15px 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 65px 20px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      h1 {
+        font-size: 68px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .cake {
+        transform: scale(0.82);
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .info,
+      .contact {
+        padding: 70px 20px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .contact-box {
+        padding: 30px 20px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .buttons {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 58px;
+      }
+
+      .cake {
+        transform: scale(0.68);
+        margin-top: -20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <nav class="nav">
+      <a href="#" class="logo">Malika tort</a>
+
+      <div class="nav-links">
+        <a href="#about">О нас</a>
+        <a href="#info">Информация</a>
+        <a href="#contact">Контакты</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div>
+
+          <span class="eyebrow">
+            Кондитерский магазин · Шымкент
+          </span>
+
+          <h1>
+            Malika<br>tort
+          </h1>
+
+          <p class="hero-text">
+            Кондитерский магазин в Шымкенте.
+            Загляните к нам за любимыми сладостями.
+          </p>
+
+          <div class="buttons">
+
+            <!-- WHATSAPP -->
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/77473939713"
+              target="_blank"
+            >
+              WhatsApp
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a
+              class="btn btn-secondary"
+              href="https://www.instagram.com/tortmalika_shymkent?cplk=MnJjajZ4bHZlN2Yx"
+              target="_blank"
+            >
+              Instagram
+            </a>
+
+            <!-- 2GIS -->
+            <a
+              class="btn btn-map"
+              href="https://2gis.kz/shymkent/geo/70000001086749500?inv_by=2ef148079131438a82e8cefcb9017500&inv_ts=1794806163"
+              target="_blank"
+            >
+              Открыть в 2GIS
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- DECORATION -->
+
+        <div class="cake-area">
+
+          <div class="cake">
+
+            <div class="cake-shadow"></div>
+
+            <div class="cake-bottom"></div>
+
+            <div class="cake-middle"></div>
+
+            <div class="cake-top"></div>
+
+            <div class="cream"></div>
+
+            <div class="cherry one"></div>
+            <div class="cherry two"></div>
+            <div class="cherry three"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+
+    <section class="info" id="info">
+
+      <div class="section-label">
+        Мы здесь
+      </div>
+
+      <h2>
+        Всё необходимое
+      </h2>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="card-icon">📍</div>
+
+          <div class="card-title">
+            Адрес
+          </div>
+
+          <div class="card-text">
+            Проспект Республики, 25д<br>
+            Шымкент, Аль-Фарабийский район<br>
+            1 этаж
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">🕘</div>
+
+          <div class="card-title">
+            Режим работы
+          </div>
+
+          <div class="card-text">
+            Ежедневно<br>
+            09:00 — 22:00
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">📞</div>
+
+          <div class="card-title">
+            Телефон
+          </div>
+
+          <div class="card-text">
+
+            <a href="tel:+77473939713">
+              +7 747 393 97 13
+            </a>
+
+            <br>
+
+            <a href="tel:+77475339128">
+              +7 747 533 91 28
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+      <div class="about-inner">
+
+        <div class="section-label">
+          Malika tort
+        </div>
+
+        <h2>
+          Сладкое место в Шымкенте
+        </h2>
+
+        <p>
+          Мы находимся на проспекте Республики, 25д,
+          в Аль-Фарабийском районе Шымкента.
+          Будем рады видеть вас ежедневно с 09:00 до 22:00.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+      <div class="contact-box">
+
+        <div class="section-label">
+          Связаться с нами
+        </div>
+
+        <h2>
+          Malika tort
+        </h2>
+
+        <a
+          class="phone"
+          href="tel:+77473939713"
+        >
+          +7 747 393 97 13
+        </a>
+
+        <a
+          class="phone"
+          href="tel:+77475339128"
+        >
+          +7 747 533 91 28
+        </a>
+
+        <div class="buttons contact-buttons">
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/77473939713"
+            target="_blank"
+          >
+            Написать в WhatsApp
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://www.instagram.com/tortmalika_shymkent?cplk=MnJjajZ4bHZlN2Yx"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
+          <a
+            class="btn btn-map"
+            href="https://2gis.kz/shymkent/geo/70000001086749500?inv_by=2ef148079131438a82e8cefcb9017500&inv_ts=1794806163"
+            target="_blank"
+          >
+            Как нас найти
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <strong>Malika tort</strong>
+
+    <p>
+      Кондитерский магазин · Шымкент
+    </p>
+
+    <p>
+      © 2026 Malika tort
+    </p>
+
+  </footer>
+
+</body>
+</html>
